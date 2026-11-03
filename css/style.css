@@ -1,0 +1,241 @@
+:root {
+  /* Colors */
+  --color-primary: #4f46e5;
+  --color-primary-hover: #4338ca;
+
+  --color-background: #f3f4f6;
+  --color-surface: #ffffff;
+
+  --color-text: #1f2937;
+  --color-text-secondary: #6b7280;
+
+  --color-border: #e5e7eb;
+  --color-input-border: #d1d5db;
+
+  --color-status-default-bg: #e5e7eb;
+  --color-status-default-text: #374151;
+
+  --color-status-done-bg: #d1fae5;
+  --color-status-done-text: #065f46;
+
+  --color-status-canceled-bg: #fee2e2;
+  --color-status-canceled-text: #991b1b;
+
+  /* Typography */
+  --font-family: Arial, sans-serif;
+
+  --font-size-xs: 12px;
+  --font-size-sm: 16px;
+  --font-size-md: 24px;
+  --font-size-lg: 32px;
+
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  /* Spacing */
+  --space-xs: 12px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+
+  /* Dimensions */
+  --container-width: 550px;
+  --button-height: 48px;
+
+  /* Borders */
+  --border-width: 1px;
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  padding: var(--space-md);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+/* Main container */
+
+.todo-container {
+  width: 100%;
+  max-width: var(--container-width);
+
+  padding: var(--space-lg);
+
+  background-color: var(--color-surface);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+/* Header */
+
+.todo-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.todo-header h1 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-xs);
+}
+
+.todo-header p {
+  color: var(--color-text-secondary);
+}
+
+/* Form */
+
+.todo-form {
+  display: flex;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xl);
+}
+
+.todo-form input {
+  flex: 1;
+  min-width: 0;
+  height: var(--button-height);
+
+  padding: 0 var(--space-sm);
+
+  font-size: var(--font-size-sm);
+
+  border: var(--border-width) solid var(--color-input-border);
+  border-radius: var(--border-radius-sm);
+  outline: none;
+}
+
+.todo-form input:focus {
+  border-color: var(--color-primary);
+}
+
+.add-button {
+  height: var(--button-height);
+  padding: 0 var(--space-md);
+
+  border: none;
+  border-radius: var(--border-radius-sm);
+
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* List */
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: var(--space-sm);
+}
+
+.list-header h2 {
+  font-size: var(--font-size-sm);
+}
+
+#task-counter {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+}
+
+#task-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* Task card */
+
+.task-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+
+  padding: var(--space-sm);
+
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+}
+
+.task-card h3 {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Status */
+
+.status {
+  padding: var(--space-xs) var(--space-sm);
+
+  border-radius: var(--border-radius-pill);
+
+  background-color: var(--color-status-default-bg);
+  color: var(--color-status-default-text);
+
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+
+  white-space: nowrap;
+}
+
+.status-done {
+  background-color: var(--color-status-done-bg);
+  color: var(--color-status-done-text);
+}
+
+.status-canceled {
+  background-color: var(--color-status-canceled-bg);
+  color: var(--color-status-canceled-text);
+}
+
+/* Responsive */
+
+@media (max-width: 480px) {
+
+  .todo-container {
+    padding: var(--space-md);
+  }
+
+  .todo-form {
+    flex-direction: column;
+  }
+
+  .add-button {
+    width: 100%;
+  }
+
+}

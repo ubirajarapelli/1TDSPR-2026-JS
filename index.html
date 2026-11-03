@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>My Todo List</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <main class="todo-container">
+      <header class="todo-header">
+        <h1>Minha Lista de Tarefas</h1>
+        <p>Organize suas atividades do dia</p>
+      </header>
+
+      <form id="todo-form" class="todo-form">
+        <input
+          type="text"
+          id="task-input"
+          placeholder="Enter a new task..."
+          autocomplete="off"
+        />
+
+        <button id="add-button" type="submit" class="add-button">
+          Adicionar
+        </button>
+      </form>
+
+      <section class="todo-list">
+        <div class="list-header">
+          <h2>Minhas tarefas</h2>
+        </div>
+
+        <div id="task-list">
+          <article class="task-card">
+            <h3>Estudar JavaScript</h3>
+            <span class="status status-">A fazer</span>
+          </article>
+        </div>
+      </section>
+    </main>
+    <script src="./js/todos.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
